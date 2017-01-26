@@ -6,8 +6,11 @@ import {
 
 export default function(state = {}, action) {
     switch(action.type){
-        case AUTH_USER:
-        return {...state, authenticated: true}
+        case AUTH_USER: {
+            let out = {...state, authenticated: true}
+            console.log('red ',out)
+            return out
+        }
         case UNAUTH_USER: 
         return {...state, authenticated: false}
         case AUTH_ERROR:
